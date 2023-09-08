@@ -12,7 +12,7 @@ class I18nDateRangeGenerator
   end
   
   def to_s
-    to_date.blank? ? without_to : with_to
+    to_date.blank? || to_date == from_date ? without_to : with_to
   end
 
   protected
@@ -21,7 +21,7 @@ class I18nDateRangeGenerator
     I18n.t(
       'date_range.without_to', 
       from: format_date(from_date, :day_month_year)
-    ) 
+    ).capitalize
   end
 
   def with_to
@@ -29,7 +29,7 @@ class I18nDateRangeGenerator
       'date_range.with_to', 
       from: format_date(from_date, from_format), 
       to: format_date(to_date, :day_month_year)
-    )
+    .capitalize
   end
 
   def from_format
