@@ -97,7 +97,7 @@ Format can be `:short` or `:long` (default is :short)
 ## Change texts or formats
 
 This gem is based on I18n. Feel free to overwrite any key you want.  
-Refer to [config/locales/fr.yml] to see what can be edited.
+Refer to [config/locales/fr.yml](config/locales/fr.yml) to see what can be edited.
 
 ## Contributing
 
