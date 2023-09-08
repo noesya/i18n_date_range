@@ -1,8 +1,7 @@
 # I18nDateRange
 
-The purpose of this gem is to prevent to re-enqueue on DelayedJob a task already enqueued.  
-So we set a "signature" attached to every task enqueued which is a composite from the class and the id of the object, and the method called.  
-And then when creating a new job we look in the "pending" jobs if there is another one with the same signature (not in the "working" one because a task can be executed and yet you want to re-excute it because of any change). 
+The purpose of this gem is to add a helper needed to display proper Date range informations.  
+For example: "Du 3 au 5 octobre 2024" or "Du 3 octobre 2023 au 12 janvier 2024"
 
 ## Installation
 
@@ -98,7 +97,7 @@ Format can be `:short` or `:long` (default is :short)
 ## Change texts or formats
 
 This gem is based on I18n. Feel free to overwrite any key you want.  
-Refer to (config/locales/fr.yml) to see what can be edited.
+Refer to [config/locales/fr.yml] to see what can be edited.
 
 ## Contributing
 
