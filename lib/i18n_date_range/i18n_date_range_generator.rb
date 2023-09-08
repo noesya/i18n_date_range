@@ -29,7 +29,7 @@ class I18nDateRangeGenerator
       'date_range.with_to', 
       from: format_date(from_date, from_format), 
       to: format_date(to_date, :day_month_year)
-    .capitalize
+    ).capitalize
   end
 
   def from_format
