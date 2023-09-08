@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "rails"
 require_relative "i18n_date_range/version"
 require_relative "i18n_date_range/i18n_date_range_generator"
 require_relative "i18n_date_range/i18n_date_range_helper"

@@ -99,6 +99,12 @@ Format can be `:short` or `:long` (default is :short)
 This gem is based on I18n. Feel free to overwrite any key you want.  
 Refer to [config/locales/fr.yml](config/locales/fr.yml) to see what can be edited.
 
+## Tests
+
+```
+bundle exec rspec
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/noesya/i18n_date_range.
