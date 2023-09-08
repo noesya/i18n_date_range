@@ -1,0 +1,15 @@
+en:
+  date_range:
+    with_to: "From %{from} to %{to}"
+    without_to: "%{from}"
+
+  date:
+    formats:
+      short:
+        day: "%e"
+        day_month: "%B %e"
+        day_month_year: "%B %e, %Y"
+      long:
+        day: "%A %e"
+        day_month: "%A, %B %e"
+        day_month_year: "%A, %B %e, %Y"

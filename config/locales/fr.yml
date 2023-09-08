@@ -1,0 +1,15 @@
+fr:
+  date_range:
+    with_to: "Du %{from} au %{to}"
+    without_to: "%{from}"
+
+  date:
+    formats:
+      short:
+        day: "%e"
+        day_month: "%e %B"
+        day_month_year: "%e %B %Y"
+      long:
+        day: "%A %e"
+        day_month: "%A %e %B"
+        day_month_year: "%A %e %B %Y"
