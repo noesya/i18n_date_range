@@ -30,7 +30,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails"
+  spec.add_dependency "rails-i18n"
 
-  # For more information and examples about making a new gem, checkout our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "combustion"
+  spec.add_development_dependency "rails"
+  spec.add_development_dependency "rails-i18n"
+  spec.add_development_dependency "rspec-rails"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rails"
 end

@@ -6,10 +6,10 @@ en-GB:
   date:
     formats:
       short:
-        day: "%e"
-        day_month: "%e %B"
-        day_month_year: "%e %B %Y"
+        day: "%-d"
+        day_month: "%-d %B"
+        day_month_year: "%-d %B %Y"
       long:
-        day: "%A %e"
-        day_month: "%A, %e %B"
-        day_month_year: "%A, %e %B %Y"
+        day: "%A %-d"
+        day_month: "%A, %-d %B"
+        day_month_year: "%A, %-d %B %Y"

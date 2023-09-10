@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+require "bundler"
+
+Bundler.require :default, :development
+Combustion.initialize! do
+  config.i18n.default_locale = :fr
+end
+
 require "i18n_date_range"
 
 RSpec.configure do |config|

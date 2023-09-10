@@ -5,6 +5,7 @@
 /doc/
 /pkg/
 /spec/reports/
+/spec/internal/log
 /tmp/
 
 # rspec failure tracking
