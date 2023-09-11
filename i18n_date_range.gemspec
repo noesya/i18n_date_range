@@ -5,7 +5,7 @@ require_relative "lib/i18n_date_range/version"
 Gem::Specification.new do |spec|
   spec.name          = "i18n_date_range"
   spec.version       = I18nDateRange::VERSION
-  spec.authors       = ["pabois"]
+  spec.authors       = ["pabois", "arnaudlevy"]
   spec.email         = ["pierreandre.boissinot@noesya.coop"]
 
   spec.summary       = "Add helper to display a date range"
