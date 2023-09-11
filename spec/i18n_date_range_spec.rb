@@ -7,6 +7,13 @@ RSpec.describe I18nDateRange do
     expect(string).to eq("8 septembre 2023")
   end
 
+  it "8 septembre 2023 même date" do
+    date_from = Date.new 2023, 9, 8
+    date_to = date_from.dup
+    string = I18nDateRangeGenerator.generate date_from, date_to, :short
+    expect(string).to eq("8 septembre 2023")
+  end
+
   it "Vendredi 8 septembre 2023" do
     date_from = Date.new 2023, 9, 8
     string = I18nDateRangeGenerator.generate date_from, nil, :long
