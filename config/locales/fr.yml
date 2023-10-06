@@ -5,11 +5,11 @@ fr:
 
   date:
     formats:
-      short:
+      rg_short:
         day: "%-d"
         day_month: "%-d %B"
         day_month_year: "%-d %B %Y"
-      long:
+      rg_long:
         day: "%A %-d"
         day_month: "%A %-d %B"
         day_month_year: "%A %-d %B %Y"

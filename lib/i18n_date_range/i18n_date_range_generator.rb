@@ -50,7 +50,7 @@ class I18nDateRangeGenerator
   def format_date(date, key)
     I18n.l(
       date,
-      format: "#{format}.#{key}".to_sym
+      format: "rg_#{format}.#{key}".to_sym
     )
   end
 
