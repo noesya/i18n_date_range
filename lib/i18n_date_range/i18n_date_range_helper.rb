@@ -7,7 +7,7 @@
 module I18nDateRangeHelper
 
   def date_range_i18n(from, to = nil, format: nil, layout: nil)
-    I18nDateRangeGenerator.generate(*args)
+    I18nDateRangeGenerator.generate(from, to, format: format, layout: layout)
   end
 
 end
