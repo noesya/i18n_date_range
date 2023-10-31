@@ -2,16 +2,17 @@
 
 # Computing range to choose the correct form
 class I18nDateRangeGenerator
-  attr_reader :from_date, :to_date, :format
+  attr_reader :from_date, :to_date, :format, :layout
 
-  def self.generate(from_date, to_date, format = :short)
-    new(from_date, to_date, format).to_s
+  def self.generate(from_date, to_date, format: :short, layout: :one_line)
+    new(from_date, to_date, format: format, layout: layout).to_s
   end
 
-  def initialize(from_date, to_date, format = :short)
+  def initialize(from_date, to_date, format: :short, layout: :one_line)
     @from_date = from_date
     @to_date = to_date
     @format = format
+    @layout = layout
   end
 
   def to_s
@@ -26,14 +27,14 @@ class I18nDateRangeGenerator
 
   def without_to
     I18n.t(
-      "date_range.without_to",
+      "date_range.#{layout}.without_to",
       from: format_date(from_date, :day_month_year)
     ).capitalize
   end
 
   def with_to
     I18n.t(
-      "date_range.with_to",
+      "date_range.#{layout}.with_to",
       from: format_date(from_date, from_format),
       to: format_date(to_date, :day_month_year)
     ).capitalize
@@ -50,7 +51,7 @@ class I18nDateRangeGenerator
   def format_date(date, key)
     I18n.l(
       date,
-      format: "rg_#{format}.#{key}".to_sym
+      format: "range_#{format}.#{key}".to_sym
     )
   end
 

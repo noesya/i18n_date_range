@@ -1,15 +1,19 @@
 en-GB:
   date_range:
-    with_to: "From %{from} to %{to}"
-    without_to: "%{from}"
+    one_line:
+      with_to: "From %{from} to %{to}"
+      without_to: "%{from}"
+    two_lines:
+      with_to: "%{from}<br>%{to}"
+      without_to: "%{from}"
 
   date:
     formats:
-      rg_short:
+      range_short:
         day: "%-d"
         day_month: "%-d %B"
         day_month_year: "%-d %B %Y"
-      rg_long:
+      range_long:
         day: "%A %-d"
         day_month: "%A, %-d %B"
         day_month_year: "%A, %-d %B %Y"
