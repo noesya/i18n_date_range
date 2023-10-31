@@ -4,11 +4,7 @@
 class I18nDateRangeGenerator
   attr_reader :from_date, :to_date, :format, :layout
 
-  def self.generate(from_date, to_date, format: :short, layout: :one_line)
-    new(from_date, to_date, format: format, layout: layout).to_s
-  end
-
-  def initialize(from_date, to_date, format: :short, layout: :one_line)
+  def initialize(from_date, to_date = nil, format: :short, layout: :one_line)
     @from_date = from_date
     @to_date = to_date
     @format = format
