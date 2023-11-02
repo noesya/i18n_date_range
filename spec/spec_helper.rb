@@ -5,6 +5,7 @@ require "bundler"
 Bundler.require :default, :development
 Combustion.initialize! do
   config.i18n.default_locale = :fr
+  config.active_support.cache_format_version = 7.0
 end
 
 require "i18n_date_range"

@@ -1,19 +1,157 @@
 fr:
   date_range:
-    one_line:
-      with_to: "Du %{from} au %{to}"
-      without_to: "%{from}"
-    two_lines:
-      with_to: "%{from}<br>%{to}"
-      without_to: "%{from}"
-
-  date:
-    formats:
-      range_short:
-        day: "%-d"
-        day_month: "%-d %B"
-        day_month_year: "%-d %B %Y"
-      range_long:
-        day: "%A %-d"
-        day_month: "%A %-d %B"
-        day_month_year: "%A %-d %B %Y"
+    no_end:
+      one_line: 
+        short: 
+          from: 
+            sentence: "À partir du %-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+        long: 
+          from: 
+            sentence: "À partir du %A %-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+      two_lines: 
+        short:
+          from: 
+            sentence: "À partir du <br>%-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+        long:
+          from: 
+            sentence: "À partir du <br>%A %-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+    same_day:
+      one_line: 
+        short: 
+          from: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+        long: 
+          from: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
+          to: 
+            sentence: ""
+            upcase_first: false
+      two_lines: 
+        short:
+          from: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: ""
+            upcase_first: false
+        long:
+          from: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
+          to: 
+            sentence: ""
+            upcase_first: false
+    same_month:
+      one_line: 
+        short: 
+          from: 
+            sentence: "Du %-d"
+            upcase_first: false
+          to: 
+            sentence: " au %-d %B %Y"
+            upcase_first: false
+        long: 
+          from: 
+            sentence: "Du %A %-d"
+            upcase_first: false
+          to: 
+            sentence: " au %A %-d %B %Y"
+            upcase_first: false
+      two_lines: 
+        short:
+          from: 
+            sentence: "%-d %B"
+            upcase_first: false
+          to: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+        long:
+          from: 
+            sentence: "%A %-d %B"
+            upcase_first: true
+          to: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
+    same_year:
+      one_line: 
+        short: 
+          from: 
+            sentence: "Du %-d %B"
+            upcase_first: false
+          to: 
+            sentence: " au %-d %B %Y"
+            upcase_first: false
+        long: 
+          from: 
+            sentence: "Du %A %-d %B"
+            upcase_first: false
+          to: 
+            sentence: " au %A %-d %B %Y"
+            upcase_first: false
+      two_lines: 
+        short:
+          from: 
+            sentence: "%-d %B"
+            upcase_first: false
+          to: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+        long:
+          from: 
+            sentence: "%A %-d %B"
+            upcase_first: true
+          to: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
+    other:
+      one_line: 
+        short: 
+          from: 
+            sentence: "Du %-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: " au %-d %B %Y"
+            upcase_first: false
+        long: 
+          from: 
+            sentence: "Du %A %-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: " au %A %-d %B %Y"
+            upcase_first: false
+      two_lines: 
+        short:
+          from: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+          to: 
+            sentence: "%-d %B %Y"
+            upcase_first: false
+        long:
+          from: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
+          to: 
+            sentence: "%A %-d %B %Y"
+            upcase_first: true

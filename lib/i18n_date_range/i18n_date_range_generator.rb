@@ -4,6 +4,13 @@
 class I18nDateRangeGenerator
   attr_reader :from_date, :to_date, :format, :layout
 
+  KIND_NO_END = :no_end
+  KIND_SAME_DAY = :same_day
+  KIND_SAME_MONTH = :same_month
+  KIND_SAME_YEAR = :same_year
+  KIND_OTHER = :other
+
+  # "format" can be :short or :long. "layout" can be :one_line or :two_lines
   def initialize(from_date, to_date = nil, format: :short, layout: :one_line)
     @from_date = from_date
     @to_date = to_date
@@ -12,50 +19,75 @@ class I18nDateRangeGenerator
   end
 
   def to_s
-    to_date.blank? || same_date? ? without_to : with_to
+    layout == :two_lines && to_formatted.present? ? from_formatted + '<br>' + to_formatted : from_formatted + to_formatted
   end
 
   protected
 
-  def same_date?
+  # Analyzing
+
+  def kind
+    unless @kind
+      @kind = KIND_OTHER
+      @kind = KIND_SAME_YEAR if same_year?
+      @kind = KIND_SAME_MONTH if same_month?
+      @kind = KIND_SAME_DAY if same_day?
+      @kind = KIND_NO_END if no_end?
+    end
+    @kind
+  end
+
+  def same_year?
+    from_date.year == to_date&.year
+  end
+
+  def same_month?
+    from_date.year == to_date&.year && from_date.month == to_date&.month
+  end
+
+  def same_day?
     to_date == from_date
   end
 
-  def without_to
-    I18n.t(
-      "date_range.#{layout}.without_to",
-      from: format_date(from_date, :day_month_year)
-    ).capitalize
+  def no_end?
+    to_date.blank?
   end
 
-  def with_to
-    I18n.t(
-      "date_range.#{layout}.with_to",
-      from: format_date(from_date, from_format),
-      to: format_date(to_date, :day_month_year)
-    ).capitalize
+  def from_sentence
+    I18n.t("#{composite_key}.from.sentence")
   end
 
-  def from_format
-    return :day_month_year if different_year?
-
-    return :day_month if different_month?
-
-    :day
+  def from_upcase_first
+    I18n.t("#{composite_key}.from.upcase_first")
   end
 
-  def format_date(date, key)
-    I18n.l(
-      date,
-      format: "range_#{format}.#{key}".to_sym
-    )
+  def to_sentence
+    I18n.t("#{composite_key}.to.sentence")
   end
 
-  def different_year?
-    from_date.year != to_date.year
+  def to_upcase_first
+    I18n.t("#{composite_key}.to.upcase_first")
   end
 
-  def different_month?
-    from_date.month != to_date.month
+  def from_formatted
+    @from_formatted ||= begin
+      from = I18n.l(from_date, format: from_sentence)
+      from = from.upcase_first if from_upcase_first
+      from
+    end
   end
+
+  def to_formatted
+    return '' if no_end?
+    @to_formatted ||= begin
+      to = I18n.l(to_date, format: to_sentence)
+      to = to.upcase_first if to_upcase_first
+      to
+    end
+  end
+
+  def composite_key
+    "date_range.#{kind}.#{layout}.#{format}"
+  end
+
 end
