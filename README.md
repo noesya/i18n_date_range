@@ -19,12 +19,17 @@ And then execute:
 This gem comes with an integrated view helper: `date_range_i18n` which takes 3 parameters:
 - date_from
 - date_to (optional)
-- format (optional) 
+- a hash of additional formatting options(optional) 
 
-Format can be `:short` or `:long` (default is :short)
+The options hash currently support 2 arguments:
+- format: can be `:short` or `:long` (default is :short)
+- layout: can be `:one_line`or `:two_lines` (default is :one_line)
 
 "Short" format means without the explicit day name (September 8, 2024).  
 "Long" format means with it (Friday, September 8, 2024).  
+
+"One line" layout means the string will be displayed on one line only (From September 8, 2024 to September 8, 2025)
+"Two lines" layout means the result will be displayed on 2 lines,separated with `<br>` (September 8, 2024<br>September 8, 2025)
 
 ## Change texts or formats
 

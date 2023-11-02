@@ -19,15 +19,15 @@ fr:
       two_lines: 
         short:
           from: 
-            sentence: "À partir du <br>%-d %B %Y"
+            sentence: "%-d %B %Y"
             upcase_first: false
           to: 
             sentence: ""
             upcase_first: false
         long:
           from: 
-            sentence: "À partir du <br>%A %-d %B %Y"
-            upcase_first: false
+            sentence: "%A %-d %B %Y"
+            upcase_first: true
           to: 
             sentence: ""
             upcase_first: false
