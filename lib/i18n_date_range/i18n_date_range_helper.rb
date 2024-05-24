@@ -7,7 +7,8 @@
 module I18nDateRangeHelper
 
   def date_range_i18n(from_date, to_date = nil, **options)
-    generator = I18nDateRangeGenerator.new(from_date, to_date, **options.slice(:format, :layout))
+    generator_options = options.slice(:format, :layout, :locale)
+    generator = I18nDateRangeGenerator.new(from_date, to_date, **generator_options)
     generator.to_s.html_safe
   end
 
