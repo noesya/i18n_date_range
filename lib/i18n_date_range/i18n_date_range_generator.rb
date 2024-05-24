@@ -72,7 +72,7 @@ class I18nDateRangeGenerator
 
   def from_formatted
     @from_formatted ||= begin
-      from = I18n.l(from_date, format: from_sentence)
+      from = I18n.l(from_date, format: from_sentence, locale: locale)
       from = from.upcase_first if from_upcase_first
       from
     end
@@ -81,7 +81,7 @@ class I18nDateRangeGenerator
   def to_formatted
     return '' if no_end?
     @to_formatted ||= begin
-      to = I18n.l(to_date, format: to_sentence)
+      to = I18n.l(to_date, format: to_sentence, locale: locale)
       to = to.upcase_first if to_upcase_first
       to
     end

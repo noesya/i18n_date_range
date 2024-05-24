@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    i18n_date_range (2.1.1)
+    i18n_date_range (2.1.2)
       rails
       rails-i18n
 
