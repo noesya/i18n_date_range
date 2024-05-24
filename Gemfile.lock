@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    i18n_date_range (2.0.0)
+    i18n_date_range (2.1.0)
       rails
       rails-i18n
 
@@ -117,7 +117,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     mini_mime (1.1.5)
-    minitest (5.23.0)
+    minitest (5.23.1)
     mutex_m (0.2.0)
     net-imap (0.4.11)
       date
@@ -180,7 +180,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.6.3.1)
+    rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
     reline (0.5.7)
@@ -208,7 +208,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.63.5)
+    rubocop (1.64.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)

@@ -59,6 +59,14 @@ RSpec.describe I18nDateRange do
     expect(I18nDateRangeGenerator.new(date_from, format: :long, layout: :two_lines).to_s).to eq("Friday September 8, 2023")
   end
 
+  it "en - locale as attribute" do
+    date_from = Date.new 2023, 9, 8
+    expect(I18nDateRangeGenerator.new(date_from, format: :short, locale: 'en').to_s).to eq("From September 8, 2023")
+    expect(I18nDateRangeGenerator.new(date_from, format: :long, locale: 'en').to_s).to eq("From Friday September 8, 2023")
+    expect(I18nDateRangeGenerator.new(date_from, layout: :two_lines, locale: 'en').to_s).to eq("September 8, 2023")
+    expect(I18nDateRangeGenerator.new(date_from, format: :long, layout: :two_lines, locale: 'en').to_s).to eq("Friday September 8, 2023")
+  end
+
   it "en - same day" do
     I18n.locale = 'en'
     date_from = Date.new 2023, 9, 8
